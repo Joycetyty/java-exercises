@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class A1_06156288 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		for(int i=1;i<=100;i++) {
+			System.out.print(getPentagonalNumber(i)+"  ");
+				if(i%10==0) {
+					System.out.println();
+				}
+		}
+	}
+	public static int getPentagonalNumber(int n) {
+		int ans=n*(3*n-1)/2;
+		return ans;
+	}
+
+}

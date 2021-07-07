@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class A3_06156288 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		 System.out.println("Feet"+"     "+"Meters"+"    "+"|"+"     "+"Meters"+"      "+"Feet");
+         System.out.println("---------------------------------------------------");
+         for(double i = 1.0; i <= 10.0; i++){
+             String meterString = footToMeter(i)+"";
+             System.out.print(i + "      " + initDisplayNum(meterString) + "     ");
+             System.out.print("|");
+             String footString = MeterToFoot((20.0+(i-1)*5))+"";
+             System.out.println("     "+(20.0+(i-1)*5) +"        "+initDisplayNum(footString));
+         }
+     }
+
+     private static String initDisplayNum(String lengthString) {
+         int decimalPlace = lengthString.length() - lengthString.indexOf('.');
+         if (decimalPlace < 4) { 
+             while (decimalPlace < 4) {
+                 lengthString += 0;
+                 decimalPlace++;
+             }
+         }
+         return lengthString;
+     }
+      public static double footToMeter(double foot){
+        double m = foot*0.305;
+        return m;
+       }
+
+      public static double MeterToFoot(double meter){
+        double f = meter * 3.279;
+        return f;
+      } 
+}
